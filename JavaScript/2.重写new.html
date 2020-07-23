@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重写new</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      new被调用后做了三件事情:
+        1.让实例可以访问到私有属性
+        2.让实例可以访问构造函数原型(constructor.prototype)所在原型链上的属性
+        3.如果构造函数返回的结果不是引用数据类型,将它直接返回
+    */
+    function objectFactory(ctor, ...args) {
+      if (typeof ctor !== 'function') {
+        throw 'newOperator function the first param must be a function';
+      }
+      let obj = new Object();
+      obj.__proto__ = Object.create(ctor.prototype);
+      let res = ctor.apply(obj,args);
+      console.log(res);
+      return typeof res === 'object'? res : obj;
+
+    };
+
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.habit = 'Games';
+      // 返回对象的话，无法访问到原型对象上新增的方法
+      // return {
+      //   name: name,
+      //   habit: 'Games'
+      // }
+      // return 'handsome boy';
+    }
+
+    // 因为缺乏锻炼的缘故，身体强度让人担忧
+    Person.prototype.strength = 60;
+
+    Person.prototype.sayYourName = function () {
+      console.log('I am ' + this.name);
+    }
+
+
+    var person = objectFactory(Person, 'Kevin', '18')
+    console.log(person);
+    console.log(person.name) // Kevin
+    console.log(person.habit) // Games
+    console.log(person.strength) // 60
+
+    person.sayYourName(); // I am Kevin
+  </script>
+</body>
+
+</html>

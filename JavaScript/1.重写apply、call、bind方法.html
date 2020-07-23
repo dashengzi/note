@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重写apply、call、bind方法</title>
+</head>
+
+<body>
+  <script>
+    //重写apply
+    // Function.prototype.myApply = function (context, args) {
+    //   var context = Object(context) || window;
+    //   context.fn = this;
+    //   let result;
+    //   if (!args) {
+    //     result = context.fn();
+    //   } else {
+    //     result = context.fn(...args);
+    //   }
+    //   delete context.fn
+    //   return result;
+    // }
+    // // 测试例子
+    // //例子1
+    // let max = Math.max.myApply(null, [1, 2, 3, 4, 5, 6])
+    // //例子2
+    // var name = '小王',
+    //   age = 17;
+    // var obj = {
+    //   name: '小张',
+    //   objAge: this.age,
+    //   myFun: function () {
+    //     console.log(this.name + '年龄' + this.age);
+    //   }
+    // }
+    // var db = {
+    //   name: '德玛',
+    //   age: 99
+    // }
+    // obj.myFun.myApply(db)
+
+    //重写call
+    // Function.prototype.myCall = function (context, ...args) {
+    //   var context = context || window;
+    //   context.fn = this;
+    //   var result = context.fn(...args);
+    //   delete context.fn
+    //   return result;
+    // }
+    // let max = Math.max.myCall(null, 1, 2, 3, 4, 5, 6);
+
+
+    //重写bind
+    Function.prototype.myBind = function (context, ...args) {
+      // 异常处理
+      if (typeof this !== "function") {
+        throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+      }
+      // 保存this的值，它代表调用 bind 的函数
+      var self = this;
+      var fNOP = function () {}; //先新建一个空对象
+      fNOP.prototype = this.prototype;
+      //这是尊重原型链的写法，比直接写fbound.prototype = this.prototype要安全
+      //不然他们指向同一个地址，修改fbound这个子对象里的方法属性，就直接影响到父对象了
+      var fbound = function () {
+        return self.apply(this instanceof self ?
+          this :
+          context, args.concat(Array.prototype.slice.call(arguments)));
+      }
+      //args表示的是在bind时传入的预定义参数
+      fbound.prototype = new fNOP();
+      return fbound;
+    }
+
+    //测试
+    function a(m, n, o) {
+      return this.name + ' ' + m + ' ' + n + ' ' + o;
+    }
+    var b = {
+      name: 'kong'
+    };
+    var ss = a.myBind(b, 7, 8)(9);
+    console.log(ss) //kong 7 8 9
+  </script>
+</body>
+
+</html>
