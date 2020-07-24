@@ -21,10 +21,10 @@
       }
       let obj = new Object();
       obj.__proto__ = Object.create(ctor.prototype);
-      let res = ctor.apply(obj,args);
-      console.log(res);
-      return typeof res === 'object'? res : obj;
-
+      let res = ctor.apply(obj, args);
+      let isObject = typeof res === 'object' && typeof res !== null;
+      let isFunction = typeof res === 'function';
+      return isObject || isFunction ? res : obj;
     };
 
 
@@ -37,24 +37,25 @@
       //   name: name,
       //   habit: 'Games'
       // }
-      // return 'handsome boy';
+      // return 'handsome boy';//可以访问到原型对象上新增的方法
+      // return function cb() {//返回函数时，应将这个函数作为最终返回值
+      //   return {
+      //     value: 1
+      //   }
+      // }
     }
 
-    // 因为缺乏锻炼的缘故，身体强度让人担忧
-    Person.prototype.strength = 60;
-
+    Person.prototype.strength = 160;
     Person.prototype.sayYourName = function () {
       console.log('I am ' + this.name);
     }
 
 
-    var person = objectFactory(Person, 'Kevin', '18')
-    console.log(person);
-    console.log(person.name) // Kevin
-    console.log(person.habit) // Games
-    console.log(person.strength) // 60
-
-    person.sayYourName(); // I am Kevin
+    var person = objectFactory(Person, 'David', '18')
+    //console.log(person.name) // David
+    //console.log(person.habit) // Games
+    //console.log(person.strength) // 160
+    //person.sayYourName(); // I am David
   </script>
 </body>
 
