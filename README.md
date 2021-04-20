@@ -6,3 +6,4 @@
 5. [防抖](https://github.com/YongSheng511/note/issues/5)<br>
 6. [节流](https://github.com/YongSheng511/note/issues/6)<br>
 7. [数据类型](https://github.com/Asever6/note/issues/8)<br>
+8. [JS中this分析](https://github.com/Asever6/note/issues/9)<br>
