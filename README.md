@@ -9,3 +9,4 @@
 8. [数据类型](https://github.com/Asever6/note/issues/8)<br>
 9. [JS中this分析](https://github.com/Asever6/note/issues/9)<br>
 10. [V8底层运行机制](https://github.com/Asever6/note/issues/10)<br>
+11. [工具函数](https://github.com/Asever6/note/issues/11)<br>
