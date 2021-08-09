@@ -1,2 +1,13 @@
-#### 日常学习总结
+#### 01-JavaScript
++ [数据类型](https://github.com/Asever6/note/issues/8)
++ [防抖&节流](https://github.com/Asever6/note/issues/5)
++ [箭头函数](https://github.com/Asever6/note/issues/7)
++ [原型&原型链](https://github.com/Asever6/note/issues/4)
++ [this](https://github.com/Asever6/note/issues/9)
++ [EventLoop](https://github.com/Asever6/note/issues/12)
++ [V8底层运行机制](https://github.com/Asever6/note/issues/10)
++ [工具函数](https://github.com/Asever6/note/issues/11)
 
+#### 02-其他
++ [git使用](https://github.com/Asever6/note/issues/2)
++ [markdown语法](https://github.com/Asever6/note/issues/1)
