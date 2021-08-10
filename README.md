@@ -7,6 +7,7 @@
 + [EventLoop](https://github.com/Asever6/note/issues/12)
 + [V8底层运行机制](https://github.com/Asever6/note/issues/10)
 + [工具函数](https://github.com/Asever6/note/issues/11)
++ [正则表达式](https://github.com/Asever6/note/issues/13)
 
 #### 02-其他
 + [git使用](https://github.com/Asever6/note/issues/2)
