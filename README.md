@@ -9,6 +9,9 @@
 + [工具函数](https://github.com/Asever6/note/issues/11)
 + [正则表达式](https://github.com/Asever6/note/issues/13)
 
-#### 02-其他
+#### 02-面试
++ [前端面试](https://github.com/Asever6/note/issues/3)
+
+#### 03-其他
 + [git使用](https://github.com/Asever6/note/issues/2)
 + [markdown语法](https://github.com/Asever6/note/issues/1)
