@@ -9,6 +9,7 @@
 + [工具函数](https://github.com/Asever6/note/issues/11)
 + [正则表达式](https://github.com/Asever6/note/issues/13)
 + [数组](https://github.com/Asever6/note/issues/14)
++ [闭包](https://github.com/Asever6/note/issues/15)
 
 #### 02-面试
 + [前端面试](https://github.com/Asever6/note/issues/3)
