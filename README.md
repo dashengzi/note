@@ -12,9 +12,12 @@
 + [闭包](https://github.com/Asever6/note/issues/15)
 + [元素尺寸](https://github.com/Asever6/note/issues/16)
 
-#### 02-面试
+#### 02-CSS
++ [BFC](https://github.com/Asever6/note/issues/18)
+ 
+#### 03-面试
 + [前端面试](https://github.com/Asever6/note/issues/3)
 
-#### 03-其他
+#### 04-其他
 + [git使用](https://github.com/Asever6/note/issues/2)
 + [markdown语法](https://github.com/Asever6/note/issues/1)
