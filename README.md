@@ -19,7 +19,7 @@
 + [前端面试](https://github.com/Asever6/note/issues/3)
 
 #### 04-Vue
-+ [Vue生命周期](https://github.com/Asever6/note/issues/19)
++ [生命周期](https://github.com/Asever6/note/issues/19)
 
 #### 05-其他
 + [git使用](https://github.com/Asever6/note/issues/2)
