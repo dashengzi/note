@@ -11,6 +11,7 @@
 + [数组](https://github.com/Asever6/note/issues/14)
 + [闭包](https://github.com/Asever6/note/issues/15)
 + [元素尺寸](https://github.com/Asever6/note/issues/16)
++ [作用域](https://github.com/zhangys66/note/issues/21)
 
 #### 02-CSS
 + [BFC](https://github.com/Asever6/note/issues/18)
